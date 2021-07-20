@@ -16,8 +16,8 @@ const showTab = (selector) => {
   /* 2. 選択されたタブの表示 */
 
   // .tabs-menu divのうち、selectorに該当するものにだけactiveクラスを付ける
-  $(`.tabs-menu [div="${selector}"]`)
-    .parent('div')
+  $(`.tabs-menu div="${selector}"`)
+    .parent('id')
     .addClass('active');
 
   // .tabs-content > divのうち、selectorに該当するものだけを表示する
