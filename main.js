@@ -10,7 +10,7 @@ const showTab = (selector) => {
   // いったん、すべての.tabs-menu > divからactiveクラスを削除する
   $('.tabs-menu > div').removeClass('active');
 
-  // いったん、すべての.tabs-content > sectionを非表示にする
+  // いったん、すべての.tabs-content > divを非表示にする
   $('.tabs-content > div').hide();
 
   /* 2. 選択されたタブの表示 */
@@ -20,7 +20,7 @@ const showTab = (selector) => {
     .parent('div')
     .addClass('active');
 
-  // .tabs-content > sectionのうち、selectorに該当するものだけを表示する
+  // .tabs-content > divのうち、selectorに該当するものだけを表示する
   $(selector).show();
 };
 
@@ -29,7 +29,7 @@ $('.tabs-menu div').on('click', (e) => {
   // hrefへのページ遷移を止める
   e.preventDefault();
 
-  // hrefの値を受け取った後、showTab()関数に渡す。e.targetはクリックされたタブ（.tabs-menu a）を表す
+  // hrefの値を受け取った後、showTab()関数に渡す。e.targetはクリックされたタブ（.tabs-menu div）を表す
   const selector = $(e.target).attr('href');
   showTab(selector);
 });
