@@ -16,7 +16,8 @@ const showTab = (selector) => {
   /* 2. 選択されたタブの表示 */
 
   // .tabs-menu divのうち、selectorに該当するものにだけactiveクラスを付ける
-  $(`.tabs-menu id="${selector}"`)
+  $(`.tabs-menu-${selector}`)
+    .parent('div')
     .addClass('active');
 
   // .tabs-content > divのうち、selectorに該当するものだけを表示する
@@ -25,11 +26,10 @@ const showTab = (selector) => {
 
 // タブがクリックされたらコンテンツを表示
 $('.tabs-menu div').on('click', (e) => {
-  // hrefへのページ遷移を止める
-  e.preventDefault();
 
-  // hrefの値を受け取った後、showTab()関数に渡す。e.targetはクリックされたタブ（.tabs-menu div）を表す
-  const selector = $(e.target).attr('href');
+  // idの値を受け取った後、showTab()関数に渡す。e.targetはクリックされたタブ（.tabs-menu div）を表す
+  const selector = $(e.target).attr('id');
+  
   showTab(selector);
 });
 
