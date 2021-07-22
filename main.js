@@ -33,10 +33,13 @@ $('.tabs-menu div').on('click', (e) => {
   switch (selector) {
   case 'tab-menu-a':
     selector = '#tabs-a';
+    break;
   case 'tab-menu-b':
     selector = '#tabs-b';
+    break;
   case 'tab-menu-c':
     selector = '#tabs-c';
+    break;
   } 
   
   showTab(selector);
