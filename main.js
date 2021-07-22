@@ -16,19 +16,10 @@ const showTab = (selector) => {
   /* 2. 選択されたタブの表示 */
 
   // .tabs-menu divのうち、selectorに該当するものにだけactiveクラスを付ける
-  $(`.tabs-menu > #tab-menu-a`)
+  $(`#${selector}`)
     .addClass('active');
-    
-
-  // .tabs-content > divのうち、selectorに該当するものだけを表示する
-  $(selector).show();
-};
-
-// タブがクリックされたらコンテンツを表示
-$('.tabs-menu div').on('click', (e) => {
-
-  // idの値を受け取った後、showTab()関数に渡す。e.targetはクリックされたタブ（.tabs-menu div）を表す
-  let selector = $(e.target).attr('id');
+  
+  console.log(selector);
   
   switch (selector) {
   case 'tab-menu-a':
@@ -41,6 +32,15 @@ $('.tabs-menu div').on('click', (e) => {
     selector = '#tabs-c';
     break;
   } 
+  // .tabs-content > divのうち、selectorに該当するものだけを表示する
+  $(selector).show();
+};
+
+// タブがクリックされたらコンテンツを表示
+$('.tabs-menu div').on('click', (e) => {
+
+  // idの値を受け取った後、showTab()関数に渡す。e.targetはクリックされたタブ（.tabs-menu div）を表す
+  let selector = $(e.target).attr('id');
   
   showTab(selector);
 });
