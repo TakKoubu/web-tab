@@ -28,7 +28,16 @@ const showTab = (selector) => {
 $('.tabs-menu div').on('click', (e) => {
 
   // idの値を受け取った後、showTab()関数に渡す。e.targetはクリックされたタブ（.tabs-menu div）を表す
-  const selector = $(e.target).attr('id');
+  let selector = $(e.target).attr('id');
+  
+  switch (selector) {
+  case 'tab-menu-a':
+    selector = '#tabs-a';
+  case 'tab-menu-b':
+    selector = '#tabs-b';
+  case 'tab-menu-c':
+    selector = '#tabs-c';
+  } 
   
   showTab(selector);
 });
