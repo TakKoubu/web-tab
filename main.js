@@ -14,14 +14,10 @@ const showTab = (selector) => {
   $('.tabs-content > div').hide();
 
   /* 2. 選択されたタブの表示 */
-  
+
   // .tabs-menu divのうち、selectorに該当するものにだけactiveクラスを付ける
-  $(`.tabs-menu > ${tabs}`)
+  $(`.tabs-menu > #tab-menu-a`)
     .addClass('active');
-  
-  const tabs = document.getElementById("tabs-menu");
-  console.log(tabs);
-  
     
 
   // .tabs-content > divのうち、selectorに該当するものだけを表示する
