@@ -46,4 +46,4 @@ $('.tabs-menu div').on('click', (e) => {
 });
 
 // 初期状態として1番目のタブを表示
-showTab('#tabs-a');
+showTab('tab-menu-a');
